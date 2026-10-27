@@ -1,0 +1,65 @@
+/*
+razred za ratanje zvezdic gre od desne proti levi in zajame vse pred njim
+*/
+.star-rating {
+    direction: rtl;
+    display: inline-flex;
+    font-size: 2rem;
+
+}
+/*
+da se velikost povečuje z vsebino -> javascript funkcija onGrow
+*/
+textarea {
+    overflow: hidden;
+    resize: none;
+}
+/*skrije inpute za radio*/
+.star-rating input {
+    display: none;
+}
+
+/*default siva neizbrana, pojavi se roka za kliknt*/
+.star-rating label {
+    color: #ccc;
+    cursor: pointer;
+}
+/*obarvanje ko hoveras, ko je izbrana in kaskadni effect da se vse prej pobarvajo ker je od desne proti levi potem se vse labele ki so za tem ko hoveras oziroma izbrana - vizualno obrne vrstni red, zato je padajoce*/
+.star-rating input:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: gold;
+}
+
+/*da so v karticah v movies velikosti slik omejene, cover, da se ne razbijejo kartice - contain bo cela slika samo ne bo zaobljena (300 ali 250 pri cover)*/
+.movie-poster {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+/*da link ni moder*/
+.user-link {
+    text-decoration: none;
+    color: inherit;
+}
+/*da se imena underlinajo ko hoveras*/
+.user-link:hover {
+    text-decoration: underline;
+}
+/*da se linki v navigacijski vrstici underlinajo ko hoveras*/
+.nav-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+/*da je footer vedno na dnu - minimalna velikost je 100% viewporta, vse je z znotraj flexboxa navpično*/
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+/*main zasede ves preostali prostor*/
+main {
+    flex: 1;
+}
